@@ -23,5 +23,10 @@ namespace Calculator
             int n = 0x221A;
             string p = char.ConvertFromUtf32(n);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
