@@ -16,17 +16,20 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        string j = "";
         public MainWindow()
         {
             InitializeComponent();
+            Equal.Click += equalValues;
             char[] digits = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }; // Added digits
             int n = 0x221A;
-            string p = char.ConvertFromUtf32(n);
+            int j = 0x21E6;
+            string p = char.ConvertFromUtf32(j);
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+        private void equalValues(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(j);
         }
     }
 }
