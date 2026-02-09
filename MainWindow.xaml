@@ -8,7 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -24,40 +25,40 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBox Name="inputTextBox" Grid.Row="0" Grid.ColumnSpan="6" Margin="15" FontSize="45"></TextBox>
-
-        <Button Name="zeroButton" Grid.Row="5" Grid.Column="2" FontSize="35">0</Button>
-        <Button Name="oneButton" Grid.Row="4" Grid.Column="2" FontSize="35">1</Button>
-        <Button Name="twoButton" Grid.Row="4" Grid.Column="3" FontSize="35">2</Button>
-        <Button Name="threeButton" Grid.Row="4" Grid.Column="4" FontSize="35">3</Button>
-        <Button Name="fourButton" Grid.Row="3" Grid.Column="2" FontSize="35">4</Button>
-        <Button Name="fiveButton" Grid.Row="3" Grid.Column="3" FontSize="35">5</Button>
-        <Button Name="sixButton" Grid.Row="3" Grid.Column="4" FontSize="35">6</Button>
-        <Button Name="sevenButton" Grid.Row="2" Grid.Column="2" FontSize="35">7</Button>
-        <Button Name="eightButton" Grid.Row="2" Grid.Column="3" FontSize="35">8</Button>
-        <Button Name="nineButton" Grid.Row="2" Grid.Column="4" FontSize="35">9</Button>
+        <TextBox Name="inputTextBox" Grid.Row="0" Grid.ColumnSpan="6" Margin="10" FontSize="45"></TextBox>
+        <TextBox Name="outputTextBox" Grid.Row="1" Grid.ColumnSpan="6" Margin="10" FontSize="30" Background="#f2f2f2"></TextBox>
+        <Button Name="zeroButton" Grid.Row="6" Grid.Column="2" FontSize="35">0</Button>
+        <Button Name="oneButton" Grid.Row="5" Grid.Column="2" FontSize="35">1</Button>
+        <Button Name="twoButton" Grid.Row="5" Grid.Column="3" FontSize="35">2</Button>
+        <Button Name="threeButton" Grid.Row="5" Grid.Column="4" FontSize="35">3</Button>
+        <Button Name="fourButton" Grid.Row="4" Grid.Column="2" FontSize="35">4</Button>
+        <Button Name="fiveButton" Grid.Row="4" Grid.Column="3" FontSize="35">5</Button>
+        <Button Name="sixButton" Grid.Row="4" Grid.Column="4" FontSize="35">6</Button>
+        <Button Name="sevenButton" Grid.Row="3" Grid.Column="2" FontSize="35">7</Button>
+        <Button Name="eightButton" Grid.Row="3" Grid.Column="3" FontSize="35">8</Button>
+        <Button Name="nineButton" Grid.Row="3" Grid.Column="4" FontSize="35">9</Button>
         
-        <Button Name="deletingAllButton" Grid.Row="1" Grid.Column="2" FontSize="35">C</Button>
-        <Button Name="openingRoundBracket" Grid.Row="1" Grid.Column="3" FontSize="35">(</Button>
-        <Button Name="closingRoundBracket" Grid.Row="1" Grid.Column="4" FontSize="35">)</Button>
-        <Button Name="deletingButton" Grid.Row="1" Grid.Column="5" FontSize="35"></Button>
-        <Button Name="plusButton" Grid.Row="2" Grid.Column="5" FontSize="35">+</Button>
-        <Button Name="minusButton" Grid.Row="3" Grid.Column="5" FontSize="35">-</Button>
-        <Button Name="multiplyButton" Grid.Row="4" Grid.Column="5" FontSize="35">*</Button>
-        <Button Name="divideButton" Grid.Row="5" Grid.Column="5" FontSize="35">/</Button>
-        <Button Name="pointButton" Grid.Row="5" Grid.Column="3" FontSize="35">.</Button>
-        <Button Name="equalsButton" Grid.Row="5" Grid.Column="4" FontSize="35">=</Button>
+        <Button Name="deletingAllButton" Grid.Row="2" Grid.Column="2" FontSize="35">C</Button>
+        <Button Name="openingRoundBracket" Grid.Row="2" Grid.Column="3" FontSize="35">(</Button>
+        <Button Name="closingRoundBracket" Grid.Row="2" Grid.Column="4" FontSize="35">)</Button>
+        <Button Name="deletingButton" Grid.Row="2" Grid.Column="5" FontSize="35"></Button>
+        <Button Name="plusButton" Grid.Row="3" Grid.Column="5" FontSize="35">+</Button>
+        <Button Name="minusButton" Grid.Row="4" Grid.Column="5" FontSize="35">-</Button>
+        <Button Name="multiplyButton" Grid.Row="5" Grid.Column="5" FontSize="35">*</Button>
+        <Button Name="divideButton" Grid.Row="6" Grid.Column="5" FontSize="35">/</Button>
+        <Button Name="pointButton" Grid.Row="6" Grid.Column="3" FontSize="35">.</Button>
+        <Button Name="equalsButton" Grid.Row="6" Grid.Column="4" FontSize="35">=</Button>
         
-        <Button Name="sineButton" Grid.Row="1" Grid.Column="0" FontSize="35">sine</Button>
-        <Button Name="cosineButton" Grid.Row="2" Grid.Column="0" FontSize="35">cos</Button>
-        <Button Name="tangentButton" Grid.Row="3" Grid.Column="0" FontSize="35">tan</Button>
-        <Button Name="cotangentButton" Grid.Row="4" Grid.Column="0" FontSize="35">ctg</Button>
-        <Button Name="percentOfANumberButton" Grid.Row="5" Grid.Column="0" FontSize="35">%</Button>
-        <Button Name="sqrtButton" Grid.Row="1" Grid.Column="1" FontSize="35"></Button>
-        <Button Name="xToThePowerOfYButton" Grid.Row="2" Grid.Column="1" FontSize="35">x^y</Button>
-        <Button Name="factorialButton" Grid.Row="3" Grid.Column="1" FontSize="35">n!</Button>
-        <Button Name="decimalLogarithmButton" Grid.Row="4" Grid.Column="1" FontSize="35">lg</Button>
-        <Button Name="piButton" Grid.Row="5" Grid.Column="1" FontSize="35"></Button>
+        <Button Name="sineButton" Grid.Row="2" Grid.Column="0" FontSize="35">sine</Button>
+        <Button Name="cosineButton" Grid.Row="3" Grid.Column="0" FontSize="35">cos</Button>
+        <Button Name="tangentButton" Grid.Row="4" Grid.Column="0" FontSize="35">tan</Button>
+        <Button Name="cotangentButton" Grid.Row="5" Grid.Column="0" FontSize="35">ctg</Button>
+        <Button Name="percentOfANumberButton" Grid.Row="6" Grid.Column="0" FontSize="35">%</Button>
+        <Button Name="sqrtButton" Grid.Row="2" Grid.Column="1" FontSize="35"></Button>
+        <Button Name="xToThePowerOfYButton" Grid.Row="3" Grid.Column="1" FontSize="35">x^y</Button>
+        <Button Name="factorialButton" Grid.Row="4" Grid.Column="1" FontSize="35">n!</Button>
+        <Button Name="decimalLogarithmButton" Grid.Row="5" Grid.Column="1" FontSize="35">lg</Button>
+        <Button Name="piButton" Grid.Row="6" Grid.Column="1" FontSize="35"></Button>
         
     </Grid>
 </Window>

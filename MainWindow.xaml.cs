@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Data;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,13 +17,17 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        //string j = "";
+        DataTable computing = new DataTable();
         public MainWindow()
         {
             InitializeComponent();
             deletingButton.Content = char.ConvertFromUtf32(0x21E6);
             sqrtButton.Content = char.ConvertFromUtf32(0x221A);
             piButton.Content = char.ConvertFromUtf32(0x03C0);
+
+            /*DataTable k = new DataTable();
+            double b =  Convert.ToDouble(k.Compute("100 / 2 * (6 + 3)", null));
+            MessageBox.Show(Convert.ToString(b));*/
 
             zeroButton.Click += ZeroButton_Click;
             oneButton.Click += OneButton_Click;
@@ -58,10 +63,10 @@ namespace Calculator
             piButton.Click += PiButton_Click;
 
         }
-
+        
         private void PiButton_Click(object sender, RoutedEventArgs e)
         {
-
+            inputTextBox.Text += Convert.ToString(Math.PI);
         }
 
         private void DecimalLogarithmButton_Click(object sender, RoutedEventArgs e)
@@ -71,47 +76,52 @@ namespace Calculator
 
         private void FactorialButton_Click(object sender, RoutedEventArgs e)
         {
-
+            int factorialNumber = 1;
+            for (int i = 1; i < Convert.ToInt16(inputTextBox.Text) + 1; i++)
+            {
+                factorialNumber = factorialNumber * i;
+            }
+            outputTextBox.Text = Convert.ToString(factorialNumber);
         }
 
         private void XToThePowerOfYButton_Click(object sender, RoutedEventArgs e)
         {
-
+            inputTextBox.Text += "^";
         }
 
         private void SqrtButton_Click(object sender, RoutedEventArgs e)
         {
-
+            outputTextBox.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void PercentOfANumberButton_Click(object sender, RoutedEventArgs e)
         {
-
+            inputTextBox.Text += "%";
         }
 
         private void CotangentButton_Click(object sender, RoutedEventArgs e)
         {
-
+            outputTextBox.Text = Convert.ToString(Math.Sin(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void TangentButton_Click(object sender, RoutedEventArgs e)
         {
-
+            outputTextBox.Text = Convert.ToString(Math.Sin(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void CosineButton_Click(object sender, RoutedEventArgs e)
         {
-
+            outputTextBox.Text = Convert.ToString(Math.Sin(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void SineButton_Click(object sender, RoutedEventArgs e)
         {
-
+            outputTextBox.Text = Convert.ToString(Math.Sin(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
         {
-
+            outputTextBox.Text = Convert.ToString(computing.Compute(inputTextBox.Text, null));
         }
 
         private void PointButton_Click(object sender, RoutedEventArgs e)
