@@ -18,16 +18,14 @@ namespace Calculator
     public partial class MainWindow : Window
     {
         DataTable computing = new DataTable();
+        bool xToThePowerOfY = false, percentOfANumber = false;
         public MainWindow()
         {
             InitializeComponent();
+
             deletingButton.Content = char.ConvertFromUtf32(0x21E6);
             sqrtButton.Content = char.ConvertFromUtf32(0x221A);
             piButton.Content = char.ConvertFromUtf32(0x03C0);
-
-            /*DataTable k = new DataTable();
-            double b =  Convert.ToDouble(k.Compute("100 / 2 * (6 + 3)", null));
-            MessageBox.Show(Convert.ToString(b));*/
 
             zeroButton.Click += ZeroButton_Click;
             oneButton.Click += OneButton_Click;
@@ -61,7 +59,6 @@ namespace Calculator
             factorialButton.Click += FactorialButton_Click;
             decimalLogarithmButton.Click += DecimalLogarithmButton_Click;
             piButton.Click += PiButton_Click;
-
         }
         
         private void PiButton_Click(object sender, RoutedEventArgs e)
@@ -71,7 +68,7 @@ namespace Calculator
 
         private void DecimalLogarithmButton_Click(object sender, RoutedEventArgs e)
         {
-
+            outputTextBox.Text = Convert.ToString(Math.Log10(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void FactorialButton_Click(object sender, RoutedEventArgs e)
@@ -87,6 +84,7 @@ namespace Calculator
         private void XToThePowerOfYButton_Click(object sender, RoutedEventArgs e)
         {
             inputTextBox.Text += "^";
+            xToThePowerOfY = true;
         }
 
         private void SqrtButton_Click(object sender, RoutedEventArgs e)
@@ -97,21 +95,22 @@ namespace Calculator
         private void PercentOfANumberButton_Click(object sender, RoutedEventArgs e)
         {
             inputTextBox.Text += "%";
+            percentOfANumber = true;
         }
 
         private void CotangentButton_Click(object sender, RoutedEventArgs e)
         {
-            outputTextBox.Text = Convert.ToString(Math.Sin(Convert.ToDouble(inputTextBox.Text)));
+            outputTextBox.Text = Convert.ToString(Math.Cos(Convert.ToDouble(inputTextBox.Text)) / Math.Sin(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void TangentButton_Click(object sender, RoutedEventArgs e)
         {
-            outputTextBox.Text = Convert.ToString(Math.Sin(Convert.ToDouble(inputTextBox.Text)));
+            outputTextBox.Text = Convert.ToString(Math.Tan(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void CosineButton_Click(object sender, RoutedEventArgs e)
         {
-            outputTextBox.Text = Convert.ToString(Math.Sin(Convert.ToDouble(inputTextBox.Text)));
+            outputTextBox.Text = Convert.ToString(Math.Cos(Convert.ToDouble(inputTextBox.Text)));
         }
 
         private void SineButton_Click(object sender, RoutedEventArgs e)
@@ -121,7 +120,57 @@ namespace Calculator
 
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
         {
-            outputTextBox.Text = Convert.ToString(computing.Compute(inputTextBox.Text, null));
+            if (xToThePowerOfY)
+            {
+                string firstNumber = string.Empty, secondNumber = string.Empty;
+                int count = 0;
+                for (int i = 0; i < inputTextBox.Text.Length; i++)
+                {
+                    if (inputTextBox.Text[i] == '^')
+                    {
+                        count++;
+                        continue;
+                    }
+                    if (count == 0)
+                    {
+                        firstNumber += inputTextBox.Text[i];
+                    }
+                    else if (count == 1)
+                    {
+                        secondNumber += inputTextBox.Text[i];
+                    }
+
+                }
+                xToThePowerOfY = false;
+                outputTextBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(firstNumber), Convert.ToDouble(secondNumber)));
+            }
+            else if (percentOfANumber)
+            {
+                string firstNumber = string.Empty, secondNumber = string.Empty;
+                int count = 0;
+                for (int i = 0; i < inputTextBox.Text.Length; i++)
+                {
+                    if (inputTextBox.Text[i] == '%')
+                    {
+                        count++;
+                        continue;
+                    }
+                    if (count == 0)
+                    {
+                        firstNumber += inputTextBox.Text[i];
+                    }
+                    else if (count == 1)
+                    {
+                        secondNumber += inputTextBox.Text[i];
+                    }
+                }
+                percentOfANumber = false;
+                outputTextBox.Text = Convert.ToString(Convert.ToDouble(secondNumber) * Convert.ToDouble(firstNumber) / 100);
+            }
+            else
+            {
+                outputTextBox.Text = Convert.ToString(computing.Compute(inputTextBox.Text, null));
+            }
         }
 
         private void PointButton_Click(object sender, RoutedEventArgs e)
@@ -151,6 +200,10 @@ namespace Calculator
 
         private void DeletingButton_Click(object sender, RoutedEventArgs e)
         {
+            if (inputTextBox.Text == string.Empty)
+            {
+                return;
+            }
             inputTextBox.Text = inputTextBox.Text.Remove(inputTextBox.Text.Length - 1, 1);
         }
 
@@ -168,7 +221,6 @@ namespace Calculator
         {
             inputTextBox.Text = string.Empty;
         }
-
         private void NineButton_Click(object sender, RoutedEventArgs e)
         {
             inputTextBox.Text += "9";
