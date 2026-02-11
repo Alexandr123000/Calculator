@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
         Title="Calculator" Height="500" Width="500" MinHeight="470" MinWidth="400">
-    <Grid>
+    <Grid Background="#FFF5FFA9">
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="1.2*"></RowDefinition>
@@ -25,40 +25,40 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBox Name="inputTextBox" Grid.Row="0" Grid.ColumnSpan="6" Margin="10" FontSize="45"></TextBox>
+        <TextBox Name="inputTextBox" Grid.Row="0" Grid.ColumnSpan="6" Margin="10" FontSize="45" Background="White"></TextBox>
         <TextBox Name="outputTextBox" Grid.Row="1" Grid.ColumnSpan="6" Margin="10" FontSize="30" IsReadOnly="True" Background="#f2f2f2"></TextBox>
-        <Button Name="zeroButton" Grid.Row="6" Grid.Column="2" FontSize="35">0</Button>
-        <Button Name="oneButton" Grid.Row="5" Grid.Column="2" FontSize="35">1</Button>
-        <Button Name="twoButton" Grid.Row="5" Grid.Column="3" FontSize="35">2</Button>
-        <Button Name="threeButton" Grid.Row="5" Grid.Column="4" FontSize="35">3</Button>
-        <Button Name="fourButton" Grid.Row="4" Grid.Column="2" FontSize="35">4</Button>
-        <Button Name="fiveButton" Grid.Row="4" Grid.Column="3" FontSize="35">5</Button>
-        <Button Name="sixButton" Grid.Row="4" Grid.Column="4" FontSize="35">6</Button>
-        <Button Name="sevenButton" Grid.Row="3" Grid.Column="2" FontSize="35">7</Button>
-        <Button Name="eightButton" Grid.Row="3" Grid.Column="3" FontSize="35">8</Button>
-        <Button Name="nineButton" Grid.Row="3" Grid.Column="4" FontSize="35">9</Button>
-        
-        <Button Name="deletingAllButton" Grid.Row="2" Grid.Column="2" FontSize="35">C</Button>
-        <Button Name="openingRoundBracket" Grid.Row="2" Grid.Column="3" FontSize="35">(</Button>
-        <Button Name="closingRoundBracket" Grid.Row="2" Grid.Column="4" FontSize="35">)</Button>
-        <Button Name="deletingButton" Grid.Row="2" Grid.Column="5" FontSize="35"></Button>
-        <Button Name="plusButton" Grid.Row="3" Grid.Column="5" FontSize="35">+</Button>
-        <Button Name="minusButton" Grid.Row="4" Grid.Column="5" FontSize="35">-</Button>
-        <Button Name="multiplyButton" Grid.Row="5" Grid.Column="5" FontSize="35">*</Button>
-        <Button Name="divideButton" Grid.Row="6" Grid.Column="5" FontSize="35">/</Button>
-        <Button Name="pointButton" Grid.Row="6" Grid.Column="3" FontSize="35">.</Button>
-        <Button Name="equalsButton" Grid.Row="6" Grid.Column="4" FontSize="35">=</Button>
-        
-        <Button Name="sineButton" Grid.Row="2" Grid.Column="0" FontSize="35">sine</Button>
-        <Button Name="cosineButton" Grid.Row="3" Grid.Column="0" FontSize="35">cos</Button>
-        <Button Name="tangentButton" Grid.Row="4" Grid.Column="0" FontSize="35">tan</Button>
-        <Button Name="cotangentButton" Grid.Row="5" Grid.Column="0" FontSize="35">ctg</Button>
-        <Button Name="percentOfANumberButton" Grid.Row="6" Grid.Column="0" FontSize="35">%</Button>
-        <Button Name="sqrtButton" Grid.Row="2" Grid.Column="1" FontSize="35"></Button>
-        <Button Name="xToThePowerOfYButton" Grid.Row="3" Grid.Column="1" FontSize="35">x^y</Button>
-        <Button Name="factorialButton" Grid.Row="4" Grid.Column="1" FontSize="35">n!</Button>
-        <Button Name="decimalLogarithmButton" Grid.Row="5" Grid.Column="1" FontSize="35">lg</Button>
-        <Button Name="piButton" Grid.Row="6" Grid.Column="1" FontSize="35"></Button>
+        <Button Name="zeroButton" Grid.Row="6" Grid.Column="2" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">0</Button>
+        <Button Name="oneButton" Grid.Row="5" Grid.Column="2" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">1</Button>
+        <Button Name="twoButton" Grid.Row="5" Grid.Column="3" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">2</Button>
+        <Button Name="threeButton" Grid.Row="5" Grid.Column="4" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">3</Button>
+        <Button Name="fourButton" Grid.Row="4" Grid.Column="2" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">4</Button>
+        <Button Name="fiveButton" Grid.Row="4" Grid.Column="3" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">5</Button>
+        <Button Name="sixButton" Grid.Row="4" Grid.Column="4" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">6</Button>
+        <Button Name="sevenButton" Grid.Row="3" Grid.Column="2" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">7</Button>
+        <Button Name="eightButton" Grid.Row="3" Grid.Column="3" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">8</Button>
+        <Button Name="nineButton" Grid.Row="3" Grid.Column="4" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">9</Button>
+
+        <Button Name="deletingAllButton" Grid.Row="2" Grid.Column="2" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">C</Button>
+        <Button Name="openingRoundBracket" Grid.Row="2" Grid.Column="3" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">(</Button>
+        <Button Name="closingRoundBracket" Grid.Row="2" Grid.Column="4" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">)</Button>
+        <Button Name="deletingButton" Grid.Row="2" Grid.Column="5" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9"></Button>
+        <Button Name="plusButton" Grid.Row="3" Grid.Column="5" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">+</Button>
+        <Button Name="minusButton" Grid.Row="4" Grid.Column="5" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">-</Button>
+        <Button Name="multiplyButton" Grid.Row="5" Grid.Column="5" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">*</Button>
+        <Button Name="divideButton" Grid.Row="6" Grid.Column="5" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">/</Button>
+        <Button Name="pointButton" Grid.Row="6" Grid.Column="3" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">.</Button>
+        <Button Name="equalsButton" Grid.Row="6" Grid.Column="4" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">=</Button>
+
+        <Button Name="sineButton" Grid.Row="2" Grid.Column="0" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">sine</Button>
+        <Button Name="cosineButton" Grid.Row="3" Grid.Column="0" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">cos</Button>
+        <Button Name="tangentButton" Grid.Row="4" Grid.Column="0" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">tan</Button>
+        <Button Name="cotangentButton" Grid.Row="5" Grid.Column="0" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">ctg</Button>
+        <Button Name="percentOfANumberButton" Grid.Row="6" Grid.Column="0" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">%</Button>
+        <Button Name="sqrtButton" Grid.Row="2" Grid.Column="1" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9"></Button>
+        <Button Name="xToThePowerOfYButton" Grid.Row="3" Grid.Column="1" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">x^y</Button>
+        <Button Name="factorialButton" Grid.Row="4" Grid.Column="1" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">n!</Button>
+        <Button Name="decimalLogarithmButton" Grid.Row="5" Grid.Column="1" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9">lg</Button>
+        <Button Name="piButton" Grid.Row="6" Grid.Column="1" FontSize="35" Background="#FFE6FFA2" BorderBrush="#FFF5FFA9"></Button>
         
     </Grid>
 </Window>

@@ -26,7 +26,6 @@ namespace Calculator
             deletingButton.Content = char.ConvertFromUtf32(0x21E6);
             sqrtButton.Content = char.ConvertFromUtf32(0x221A);
             piButton.Content = char.ConvertFromUtf32(0x03C0);
-
             zeroButton.Click += ZeroButton_Click;
             oneButton.Click += OneButton_Click;
             twoButton.Click += TwoButton_Click;
@@ -37,7 +36,6 @@ namespace Calculator
             sevenButton.Click += SevenButton_Click;
             eightButton.Click += EightButton_Click;
             nineButton.Click += NineButton_Click;
-
             deletingAllButton.Click += DeletingAllButton_Click;
             openingRoundBracket.Click += OpeningRoundBracket_Click;
             closingRoundBracket.Click += ClosingRoundBracket_Click;
@@ -48,7 +46,6 @@ namespace Calculator
             divideButton.Click += DivideButton_Click;
             pointButton.Click += PointButton_Click;
             equalsButton.Click += EqualsButton_Click;
-
             sineButton.Click += SineButton_Click;
             cosineButton.Click += CosineButton_Click;
             tangentButton.Click += TangentButton_Click;
@@ -74,7 +71,7 @@ namespace Calculator
         private void FactorialButton_Click(object sender, RoutedEventArgs e)
         {
             int factorialNumber = 1;
-            for (int i = 1; i < Convert.ToInt16(inputTextBox.Text) + 1; i++)
+            for (int i = 1; i < Convert.ToInt16(inputTextBox.Text) + 1; i++) // factorial calculation
             {
                 factorialNumber = factorialNumber * i;
             }
@@ -120,7 +117,7 @@ namespace Calculator
 
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (xToThePowerOfY)
+            if (xToThePowerOfY) // if it needs to calculate a number to a power
             {
                 string firstNumber = string.Empty, secondNumber = string.Empty;
                 int count = 0;
@@ -144,7 +141,7 @@ namespace Calculator
                 xToThePowerOfY = false;
                 outputTextBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(firstNumber), Convert.ToDouble(secondNumber)));
             }
-            else if (percentOfANumber)
+            else if (percentOfANumber) // if it needs to calculate the percentage of a number
             {
                 string firstNumber = string.Empty, secondNumber = string.Empty;
                 int count = 0;
