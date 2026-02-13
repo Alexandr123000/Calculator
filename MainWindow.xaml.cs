@@ -12,20 +12,18 @@ using System.Windows.Shapes;
 
 namespace Calculator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         DataTable computing = new DataTable();
         bool xToThePowerOfY = false, percentOfANumber = false;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            deletingButton.Content = char.ConvertFromUtf32(0x21E6);
-            sqrtButton.Content = char.ConvertFromUtf32(0x221A);
-            piButton.Content = char.ConvertFromUtf32(0x03C0);
+            deletingButton.Content = char.ConvertFromUtf32(0x21E6); // adding a symbol
+            sqrtButton.Content = char.ConvertFromUtf32(0x221A); // adding a symbol
+            piButton.Content = char.ConvertFromUtf32(0x03C0); // adding a symbol
             zeroButton.Click += ZeroButton_Click;
             oneButton.Click += OneButton_Click;
             twoButton.Click += TwoButton_Click;
