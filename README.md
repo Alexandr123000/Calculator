@@ -6,5 +6,12 @@
 * Subtraction
 * Multiplication
 * Division
-* Exponentiation etc.
+* Exponentiation, etc.
 
+---
+
+## Technologies
+**Technologies:**
+* C#
+* WPF
+* XAML
